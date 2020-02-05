@@ -79,7 +79,7 @@ def gross_per_studio(collection)
       studio_name = hash[collection[i][:studio]]
       movie_gross = collection[i][:worldwide_gross]
 
-      hash[collection[i][:studio]] += collection[i][:worldwide_gross]
+      hash[collection[i][:studio]] = collection[i][:worldwide_gross]
       i += 1
     end
 

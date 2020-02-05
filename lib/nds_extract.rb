@@ -115,7 +115,7 @@ def movies_with_directors_set(source)
   # to have a :director_name key added to it.
 end
 
-puts studios_totals(directors_database)
+
 
 # ----------------    End of Your Code Region --------------------
 # Don't edit the following code! Make the methods above work with this method
@@ -126,3 +126,6 @@ def studios_totals(nds)
   movies_with_director_names = flatten_a_o_a(a_o_a_movies_with_director_names)
   return gross_per_studio(movies_with_director_names)
 end
+
+
+puts studios_totals(directors_database)

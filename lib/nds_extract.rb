@@ -72,7 +72,7 @@ def gross_per_studio(collection)
   # * collection: Array of Hashes where each Hash where each Hash represents a movie
   #
 
-  hash = {}  #Rename? 'studios_gross' or 'result hash' maybe
+  hash = {}  #Rename? 'studios_gross' or 'result_hash' maybe
   total = 0
   i = 0
     while i < collection.count do
@@ -85,12 +85,9 @@ def gross_per_studio(collection)
 
       hash[studio_name] += movie_gross
 
-
-      #hash[collection[i][:studio]] = collection[i][:worldwide_gross]
       i += 1
     end
 
-puts hash
   # RETURN:
   hash
   # Hash whose keys are the studio names and whose values are the sum
@@ -118,7 +115,7 @@ def movies_with_directors_set(source)
   # to have a :director_name key added to it.
 end
 
-
+puts studios_totals(directors_database)
 
 # ----------------    End of Your Code Region --------------------
 # Don't edit the following code! Make the methods above work with this method

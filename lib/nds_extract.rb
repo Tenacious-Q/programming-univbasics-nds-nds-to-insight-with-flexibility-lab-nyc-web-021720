@@ -73,13 +73,19 @@ def gross_per_studio(collection)
   #
 
   hash = {}  #Rename? 'studios_gross' or 'result hash' maybe
-
+  total = 0
   i = 0
     while i < collection.count do
-      studio_name = hash[collection[i][:studio]]
+      studio_name = collection[i][:studio]]
       movie_gross = collection[i][:worldwide_gross]
 
-      hash[collection[i][:studio]] = collection[i][:worldwide_gross]
+      if hash.include?(studio_name) == false
+        hash[studio_name] = 0
+      end
+
+
+      #hash[collection[i][:studio]] = collection[i][:worldwide_gross]
+      #hash[collection[i][:studio]] = collection[i][:worldwide_gross]
       i += 1
     end
 

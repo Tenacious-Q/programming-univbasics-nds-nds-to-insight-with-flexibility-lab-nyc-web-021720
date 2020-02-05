@@ -21,7 +21,7 @@ def flatten_a_o_a(aoa)
 end
 
 def movie_with_director_name(director_name, movie_data)
-  { 
+  {
     :title => movie_data[:title],
     :worldwide_gross => movie_data[:worldwide_gross],
     :release_year => movie_data[:release_year],
@@ -43,12 +43,24 @@ def movies_with_director_key(name, movies_collection)
   # * name: A director's name
   # * movies_collection: An Array of Hashes where each Hash represents a movie
   #
+  array = []    #Improve name for "array"?
+
+  i = 0
+  while i < movies_collection.count do
+    array << movie_with_director_name(name, movies_collection[i])
+    i += 1
+  end
+
+  array
   # RETURN:
   #
   # Array of Hashes where each Hash represents a movie; however, they should all have a
   # :director_name key. This addition can be done by using the provided
   # movie_with_director_name method
+  #array
+
 end
+
 
 
 def gross_per_studio(collection)
@@ -59,6 +71,9 @@ def gross_per_studio(collection)
   # INPUT:
   # * collection: Array of Hashes where each Hash where each Hash represents a movie
   #
+
+  hash = {}
+
   # RETURN:
   #
   # Hash whose keys are the studio names and whose values are the sum
@@ -67,16 +82,26 @@ end
 
 def movies_with_directors_set(source)
   # GOAL: For each director, find their :movies Array and stick it in a new Array
-  #
   # INPUT:
   # * source: An Array of Hashes containing director information including
   # :name and :movies
   #
+
+  new_array = []
+  i = 0
+  while i < source.count do
+    new_array << movies_with_director_key(source[i][:name], source[i][:movies])
+    i += 1
+  end
+
+  new_array
   # RETURN:
   #
   # Array of Arrays containing all of a director's movies. Each movie will need
   # to have a :director_name key added to it.
 end
+
+
 
 # ----------------    End of Your Code Region --------------------
 # Don't edit the following code! Make the methods above work with this method

@@ -76,7 +76,7 @@ def gross_per_studio(collection)
   total = 0
   i = 0
     while i < collection.count do
-      studio_name = collection[i][:studio]]
+      studio_name = collection[i][:studio]
       movie_gross = collection[i][:worldwide_gross]
 
       if hash.include?(studio_name) == false
